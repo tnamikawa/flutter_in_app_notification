@@ -123,11 +123,9 @@ class _NotificationController extends InheritedWidget {
 
     state.overlay = OverlayEntry(
       builder: (context) {
-        if (state.screenSize == Size.zero) {
-          state.screenSize = MediaQuery.of(context).size;
-          state.horizontalAnimationController.screenWidth =
-              state.screenSize.width;
-        }
+        state.screenSize = MediaQuery.of(context).size;
+        state.horizontalAnimationController.screenWidth =
+            state.screenSize.width;
 
         return Positioned(
           bottom: state.screenSize.height - state.currentVerticalPosition,
